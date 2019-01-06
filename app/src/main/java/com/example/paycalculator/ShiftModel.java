@@ -33,10 +33,10 @@ public class ShiftModel {
 
     }
 
-    public Shift getShift(UUID todoId) {
+    public Shift getShift(UUID shiftId) {
 
         for (Shift shift : shiftList) {
-            if (shift.getmId().equals(todoId)){
+            if (shift.getmId().equals(shiftId)){
                 return shift;
             }
         }
