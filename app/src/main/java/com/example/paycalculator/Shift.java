@@ -5,22 +5,21 @@ import android.view.View;
 import java.util.UUID;
 
 public class Shift {
-    private UUID shiftId;
+    private UUID mId;
     private String shiftTitle;
-    private String mDetail;
-    private int mHours;
+    private int shiftHours;
     private int totalHours;
 
     public Shift() {
-        shiftId = UUID.randomUUID();
+        mId = UUID.randomUUID();
     }
 
-    public UUID getShiftId() {
-        return shiftId;
+    public UUID getmId() {
+        return mId;
     }
 
-    public void setShiftId(UUID shiftId) {
-        this.shiftId = shiftId;
+    public void setmId(UUID mId) {
+        this.mId = mId;
     }
 
     public String getShiftTitle() {
@@ -31,20 +30,12 @@ public class Shift {
         this.shiftTitle = shiftTitle;
     }
 
-    public String getmDetail() {
-        return mDetail;
+    public int getShiftHours() {
+        return shiftHours;
     }
 
-    public void setmDetail(String mDetail) {
-        this.mDetail = mDetail;
-    }
-
-    public int getmHours() {
-        return mHours;
-    }
-
-    public void setmHours(int mHours) {
-        this.mHours = mHours;
+    public void setShiftHours(int shiftHours) {
+        this.shiftHours = shiftHours;
     }
 
     public int getTotalHours() {
@@ -57,7 +48,7 @@ public class Shift {
 
     public void saveHours (View v)
     {
-        totalHours = (totalHours + mHours);
+        totalHours = (totalHours + shiftHours);
     }
 }
 
