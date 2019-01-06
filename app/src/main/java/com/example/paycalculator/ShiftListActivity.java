@@ -3,7 +3,7 @@ package com.example.paycalculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TodoListActivity extends AppCompatActivity {
+public class ShiftListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
