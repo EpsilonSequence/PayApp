@@ -22,5 +22,6 @@ public class ShiftListActivity extends AppCompatActivity {
                     .commit();
         }
 
+
     }
 }
