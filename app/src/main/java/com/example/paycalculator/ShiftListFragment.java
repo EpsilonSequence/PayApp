@@ -20,7 +20,7 @@ import java.util.List;
 public class ShiftListFragment extends Fragment {
 
     private RecyclerView mTodoRecyclerView;
-    TodoAdapter mTodoAdapter;
+    ShiftAdapter mShiftAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,9 @@ public class ShiftListFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_todo_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_shift_list, container, false);
 
-        mTodoRecyclerView = (RecyclerView) view.findViewById(R.id.todo_recycler_view);
+        mTodoRecyclerView = (RecyclerView) view.findViewById(R.id.shift_recycler_view);
         mTodoRecyclerView.setLayoutManager( new LinearLayoutManager(getActivity()) );
 
         updateUI();
@@ -54,34 +54,34 @@ public class ShiftListFragment extends Fragment {
 
     private void updateUI(){
 
-        ArrayList todos = new ArrayList<>();
-        TodoModel todoModel = TodoModel.get(getContext());
-        todos = todoModel.getTodos();
+        ArrayList shifts = new ArrayList<>();
+        ShiftModel shiftModel = ShiftModel.get(getContext());
+        shifts = shiftModel.getShifts();
 
-        if (mTodoAdapter == null) {
-            mTodoAdapter = new TodoAdapter(todos);
-            mTodoRecyclerView.setAdapter(mTodoAdapter);
+        if (mShiftAdapter == null) {
+            mShiftAdapter = new ShiftAdapter(shifts);
+            mTodoRecyclerView.setAdapter(mShiftAdapter);
         } else {
-            mTodoAdapter.notifyDataSetChanged();
+            mShiftAdapter.notifyDataSetChanged();
         }
 
     }
 
-    public class TodoHolder extends RecyclerView.ViewHolder
+    public class ShiftHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
-        private Todo mTodo;
+        private Shift mShift;
         private TextView mTextViewTitle;
-        private TextView mTextViewDate;
+        private TextView mTextViewHours;
 
-        public TodoHolder(LayoutInflater inflater, ViewGroup parent) {
+        public ShiftHolder(LayoutInflater inflater, ViewGroup parent) {
 
-            super(inflater.inflate(R.layout.list_item_todo, parent, false));
+            super(inflater.inflate(R.layout.list_item_shift, parent, false));
 
             itemView.setOnClickListener(this);
 
-            mTextViewTitle = (TextView) itemView.findViewById(R.id.todo_title);
-            mTextViewDate = (TextView) itemView.findViewById(R.id.todo_date);
+            mTextViewTitle = (TextView) itemView.findViewById(R.id.shift_title);
+            mTextViewHours = (TextView) itemView.findViewById(R.id.shift_hours);
 
         }
 
@@ -90,47 +90,47 @@ public class ShiftListFragment extends Fragment {
             // have a Toast for now
             Toast.makeText(
                     getActivity(),
-                    mTodo.getTitle() + " clicked",
+                    mShift.getShiftTitle() + " clicked",
                     Toast.LENGTH_SHORT)
                     .show();
 
-            Intent intent = TodoActivity.newIntent(getActivity(), mTodo.getId());
+            Intent intent = ShiftActivity.newIntent(getActivity(), mShift.getmId());
             startActivity(intent);
 
         }
 
-        public void bind(Todo todo){
-            mTodo = todo;
-            mTextViewTitle.setText(mTodo.getTitle());
-            mTextViewDate.setText(mTodo.getDate().toString());
+        public void bind(Shift shift){
+            mShift = shift;
+            mTextViewTitle.setText(mShift.getShiftTitle());
+            mTextViewHours.setText(mShift.getShiftHours());
         }
 
     }
 
-    public class TodoAdapter extends RecyclerView.Adapter<TodoListFragment.TodoHolder> {
+    public class ShiftAdapter extends RecyclerView.Adapter<ShiftListFragment.ShiftHolder> {
 
-        private List<Todo> mTodos;
+        private List<Shift> mShifts;
 
-        public TodoAdapter(List<Todo> todos) {
-            mTodos = todos;
+        public ShiftAdapter(List<Shift> shifts) {
+            mShifts = shifts;
         }
 
         @Override
-        public TodoListFragment.TodoHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ShiftListFragment.ShiftHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
 
-            return new TodoHolder(layoutInflater, parent);
+            return new ShiftHolder(layoutInflater, parent);
         }
 
         @Override
-        public void onBindViewHolder(TodoHolder holder, int position) {
-            Todo todo = mTodos.get(position);
-            holder.bind(todo);
+        public void onBindViewHolder(ShiftHolder holder, int position) {
+            Shift shift = mShifts.get(position);
+            holder.bind(shift);
         }
 
         @Override
         public int getItemCount() {
-            return mTodos.size();
+            return mShifts.size();
         }
 
     }
