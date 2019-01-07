@@ -16,7 +16,7 @@ public class ShiftListActivity extends AppCompatActivity {
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
         if (fragment == null){
-            ShiftListFragment todoListFragment = new ShiftListFragment();
+            ShiftListFragment shiftListFragment = new ShiftListFragment();
             fm.beginTransaction()
                     .add(R.id.fragment_container, shiftListFragment)
                     .commit();

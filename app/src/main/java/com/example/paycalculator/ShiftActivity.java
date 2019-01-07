@@ -14,19 +14,19 @@ public class ShiftActivity extends AppCompatActivity {
 
     public static final String EXTRA_SHIFT_ID = "shift_id";
 
-    public static Intent newIntent(Context packageContext, UUID shiftid) {
+    public static Intent newIntent(Context packageContext, UUID shiftId) {
         Intent intent = new Intent(packageContext, ShiftActivity.class);
-        intent.putExtra(EXTRA_SHIFT_ID, shiftid);
+        intent.putExtra(EXTRA_SHIFT_ID, shiftId);
         return intent;
     }
 
     /*
     To decouple the fragment and make it reusable, the ShiftFragment has a newInstance method
-    that receives a shiftid and returns the fragment
+    that receives a shiftId and returns the fragment
      */
     protected Fragment createFragment(){
-        UUID shiftid = (UUID) getIntent().getSerializableExtra(EXTRA_SHIFT_ID);
-        return ShiftFragment.newInstance(shiftid);
+        UUID shiftId = (UUID) getIntent().getSerializableExtra(EXTRA_SHIFT_ID);
+        return ShiftFragment.newInstance(shiftId);
     }
 
     @Override
