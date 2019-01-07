@@ -17,8 +17,8 @@ public class Shift {
     public UUID getmId() {
         return mId;
     }
-
-    public void setmId(UUID mId) {
+    //possible issues
+    public void setId(UUID mId) {
         this.mId = mId;
     }
 
