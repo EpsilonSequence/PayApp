@@ -15,11 +15,13 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 
+import java.util.UUID;
+
 public class ShiftFragment extends Fragment {
 
-    private static final String ARG_TODO_ID = "todo_id";
+    private static final String ARG_SHIFT_ID = "shift_id";
 
-    private Todo mTodo;
+    private Shift mShift;
     private EditText mEditTextTitle;
     private Button mButtonDate;
     private CheckBox mCheckBoxIsComplete;
@@ -28,11 +30,11 @@ public class ShiftFragment extends Fragment {
     Rather than the calling the constructor directly, Activity(s) should call newInstance
     and pass required parameters that the fragment needs to create its arguments.
      */
-    public static TodoFragment newInstance(UUID todoId) {
+    public static ShiftFragment newInstance(UUID shiftId) {
         Bundle args = new Bundle();
-        args.putSerializable(ARG_TODO_ID, todoId);
+        args.putSerializable(ARG_SHIFT_ID, shiftId);
 
-        TodoFragment fragment = new TodoFragment();
+        ShiftFragment fragment = new ShiftFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -45,23 +47,23 @@ public class ShiftFragment extends Fragment {
          Fragment accessing the intent from the hosting Activity as in the following code snippet
          allows for simple code that works.
 
-        UUID todoId = (UUID) getActivity()
+        UUID shiftId = (UUID) getActivity()
                 .getIntent().getSerializableExtra(TodoActivity.EXTRA_TODO_ID);
 
-         The disadvantage: TodoFragment is no longer reusable as it is coupled to Activities whoes
-         intent has to contain the todoId.
+         The disadvantage: ShiftFragment is no longer reusable as it is coupled to Activities whoes
+         intent has to contain the shiftId.
 
-         Solution: store the todoId in the fragment's arguments bundle.
-            See the TodoFragment newInstance(UUID todoId) method.
+         Solution: store the shiftId in the fragment's arguments bundle.
+            See the ShiftFragment newInstance(UUID shiftId) method.
 
-         Then to create a new fragment, the TodoActivity should call TodoFragment.newInstance(UUID)
+         Then to create a new fragment, the TodoActivity should call ShiftFragment.newInstance(UUID)
          and pass in the UUID it retrieves from its extra argument.
 
         */
 
-        UUID todoId = (UUID) getArguments().getSerializable(ARG_TODO_ID);
+        UUID shiftId = (UUID) getArguments().getSerializable(ARG_SHIFT_ID);
 
-        mTodo = TodoModel.get(getActivity()).getTodo(todoId);
+        mShift = ShiftModel.get(getActivity()).getShift(shiftId);
 
     }
 
@@ -71,10 +73,10 @@ public class ShiftFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_todo, container, false);
+        View view = inflater.inflate(R.layout.fragment_shift, container, false);
 
         mEditTextTitle = (EditText) view.findViewById(R.id.todo_title);
-        mEditTextTitle.setText(mTodo.getTitle());
+        mEditTextTitle.setText(mShift.getShiftTitle());
         mEditTextTitle.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -83,7 +85,7 @@ public class ShiftFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mTodo.setTitle(s.toString());
+                mShift.setShiftTitle(s.toString());
             }
 
             @Override
@@ -92,19 +94,41 @@ public class ShiftFragment extends Fragment {
             }
         });
 
-        mButtonDate = (Button) view.findViewById(R.id.todo_date);
-        mButtonDate.setText(mTodo.getDate().toString());
-        mButtonDate.setEnabled(false);
-
-        mCheckBoxIsComplete = (CheckBox) view.findViewById(R.id.todo_complete);
-        mCheckBoxIsComplete.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        mEditTextTitle = (EditText) view.findViewById(R.id.shift_hours);
+        mEditTextTitle.setText(mShift.getShiftHours());
+        mEditTextTitle.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Log.d("DEBUG **** TodoFragment","called onCheckedChanged");
-                mTodo.setComplete(isChecked);
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // This line is intentionally left blank
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mShift.setShiftTitle(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // This line is intentionally left blank
             }
         });
 
+/*
+        mButtonDate = (EditText) view.findViewById(R.id.shift_hours);
+        mButtonDate.setText(mShift.getShiftHours());
+        mButtonDate.setEnabled(false);
+*/
+
+/*
+        mCheckBoxIsComplete = (CheckBox) view.findViewById(R.id.shift_complete);
+        mCheckBoxIsComplete.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.d("DEBUG **** ShiftFragment","called onCheckedChanged");
+                mShift.setComplete(isChecked);
+            }
+        });
+*/
         return view;
 
     }
