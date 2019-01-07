@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">PayCalculator</string>
+    <string name="app_name">Pay Calculator</string>
+    <string name="shift_title">Shift/Day Title</string>
+    <string name="shift_title_hint">Day 1</string>
+    <string name="shift_title_label">Title of shift or day worked</string>
+    <string name="shift_hours_label">Hours Worked</string>
+    <string name="shift_hours_hint">Number of hours worked</string>
 </resources>
