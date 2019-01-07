@@ -102,7 +102,7 @@ public class ShiftListFragment extends Fragment {
         public void bind(Shift shift){
             mShift = shift;
             mTextViewTitle.setText(mShift.getShiftTitle());
-            mTextViewHours.setText(mShift.getShiftHours());
+           // mTextViewHours.setText(mShift.getShiftHours());
         }
 
     }

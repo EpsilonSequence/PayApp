@@ -6,4 +6,5 @@
     <string name="shift_hours">Hours Worked</string>
     <string name="shift_hours_label">Hours Worked</string>
     <string name="shift_hours_hint">Number of hours worked</string>
+    <string name="new_shift">New Shift</string>
 </resources>

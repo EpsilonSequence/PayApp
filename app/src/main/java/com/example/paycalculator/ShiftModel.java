@@ -26,7 +26,7 @@ public class ShiftModel {
         for (int i=0; i < 3; i++){
             Shift shift = new Shift();
             shift.setShiftTitle("Shift title " + i);
-            //shift.setDetail("Detail for task " + shift.getId().toString());
+            shift.setShiftHours(1);
 
             shiftList.add(shift);
         }

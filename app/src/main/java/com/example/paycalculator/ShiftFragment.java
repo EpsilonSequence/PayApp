@@ -75,7 +75,7 @@ public class ShiftFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_shift, container, false);
 
-        mEditTextTitle = (EditText) view.findViewById(R.id.todo_title);
+        mEditTextTitle = (EditText) view.findViewById(R.id.shift_title);
         mEditTextTitle.setText(mShift.getShiftTitle());
         mEditTextTitle.addTextChangedListener(new TextWatcher() {
             @Override
@@ -94,6 +94,7 @@ public class ShiftFragment extends Fragment {
             }
         });
 
+        /*
         mEditTextTitle = (EditText) view.findViewById(R.id.shift_hours);
         mEditTextTitle.setText(mShift.getShiftHours());
         mEditTextTitle.addTextChangedListener(new TextWatcher() {
@@ -104,7 +105,7 @@ public class ShiftFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mShift.setShiftTitle(s.toString());
+                mShift.setShiftHours((String.valueOf(sh)));
             }
 
             @Override
@@ -112,6 +113,9 @@ public class ShiftFragment extends Fragment {
                 // This line is intentionally left blank
             }
         });
+    */
+
+
 
 /*
         mButtonDate = (EditText) view.findViewById(R.id.shift_hours);
