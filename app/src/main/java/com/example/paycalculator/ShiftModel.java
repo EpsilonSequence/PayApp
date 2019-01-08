@@ -9,6 +9,7 @@ public class ShiftModel {
     private static ShiftModel sShiftModel;
 
     private ArrayList<Shift> shiftList;
+    private ArrayList<Calculator> calcMenu;
 
     public static ShiftModel get(Context context) {
         if (sShiftModel == null) {
@@ -55,11 +56,28 @@ public class ShiftModel {
         shiftList.add(shift);
 
     }
-/*
-    public void addCalculator(Calculator calculator){
 
-        shiftList.add(calculator);
+    public Calculator getCalculator (UUID calcId) {
+
+        for (Calculator calculator : calcMenu) {
+            if (calculator.getcalcId().equals(calcId)){
+                return calculator;
+            }
+        }
+
+        return null;
+    }
+
+    public ArrayList<Calculator> getCalcs() {
+
+        return calcMenu;
 
     }
-*/
+
+    public void addCalculator(Calculator calculator){
+
+        calcMenu.add(calculator);
+
+    }
+
 }
