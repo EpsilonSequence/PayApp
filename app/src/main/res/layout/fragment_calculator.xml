@@ -25,15 +25,21 @@
         android:text="@string/total_hours_label"/>
 
     <EditText
-        android:id="@+id/shift_hours"
+        android:id="@+id/total_hours"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/shift_hours_hint"/>
+        android:hint="@string/total_hours_hint"/>
 
     <Button
         android:id="@+id/save_hours"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save Hours" />
+
+    <EditText
+        android:id="@+id/total_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/total_pay"/>
 
 </LinearLayout>

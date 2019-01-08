@@ -13,5 +13,6 @@
     <string name="hourly_wage_label">Pay Per Hour</string>
     <string name="total_hours">Total Hours</string>
     <string name="total_hours_label">Total Hours</string>
-    <string name="Total_pay">New Shift</string>
+    <string name="total_hours_hint">Total Hours</string>
+    <string name="total_pay">Total Amount Earned</string>
 </resources>
