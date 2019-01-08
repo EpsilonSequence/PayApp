@@ -115,7 +115,7 @@ public class ShiftListFragment extends Fragment {
             itemView.setOnClickListener(this);
 
             mTextViewTitle = (TextView) itemView.findViewById(R.id.shift_title);
-            mTextViewHours = (TextView) itemView.findViewById(R.id.shift_hours);
+            mTextViewHours = (TextView) itemView.findViewById(R.id.shift_title);
 
         }
 

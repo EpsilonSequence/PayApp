@@ -31,10 +31,43 @@
         android:hint="@string/shift_hours_hint"
         android:inputType="number" />
 
-    <Button
-        android:id="@+id/save_hours"
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Hours" />
+        android:text="@string/hourly_wage_label"/>
+
+    <EditText
+        android:id="@+id/hourly_wage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hourly_wage_hint"
+        android:inputType="number|numberDecimal" />
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/total_hours_label"/>
+
+    <EditText
+        android:id="@+id/total_hours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/total_hours_hint"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/calculate_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_pay" />
+
+    <EditText
+        android:id="@+id/total_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/total_pay"
+        android:inputType="numberDecimal" />
 
 </LinearLayout>

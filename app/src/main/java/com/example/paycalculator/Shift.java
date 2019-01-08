@@ -18,32 +18,32 @@ public class Shift {
         return mId;
     }
     //possible issues
-    public void setId(UUID mId) {
-        this.mId = mId;
+    public void setId(UUID id) {
+        this.mId = id;
     }
 
     public String getShiftTitle() {
         return shiftTitle;
     }
 
-    public void setShiftTitle(String shiftTitle) {
-        this.shiftTitle = shiftTitle;
+    public void setShiftTitle(String title) {
+        this.shiftTitle = title;
     }
 
     public int getShiftHours() {
         return shiftHours;
     }
 
-    public void setShiftHours(int shiftHours) {
-        this.shiftHours = shiftHours;
+    public void setShiftHours(int hours) {
+        this.shiftHours = hours;
     }
 
     public int getTotalHours() {
         return totalHours;
     }
 
-    public void setTotalHours(int totalHours) {
-        this.totalHours = totalHours;
+    public void setTotalHours(int totalWorkedHours) {
+        this.totalHours = totalWorkedHours;
     }
 
     public void saveHours (View v)

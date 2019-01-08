@@ -23,7 +23,10 @@ public class ShiftFragment extends Fragment {
 
     private Shift mShift;
     private EditText mEditTextTitle;
-    private Button mButtonDate;
+    private EditText mEditTextHours;
+    private EditText mEditTextWage;
+    private EditText mEditTextTotalPay;
+    private Button mCalculatePay;
     private CheckBox mCheckBoxIsComplete;
 
     /*
@@ -42,24 +45,6 @@ public class ShiftFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-
-        /*
-         Fragment accessing the intent from the hosting Activity as in the following code snippet
-         allows for simple code that works.
-
-        UUID shiftId = (UUID) getActivity()
-                .getIntent().getSerializableExtra(TodoActivity.EXTRA_SHIFT_ID);
-
-         The disadvantage: ShiftFragment is no longer reusable as it is coupled to Activities whoes
-         intent has to contain the shiftId.
-
-         Solution: store the shiftId in the fragment's arguments bundle.
-            See the ShiftFragment newInstance(UUID shiftId) method.
-
-         Then to create a new fragment, the TodoActivity should call ShiftFragment.newInstance(UUID)
-         and pass in the UUID it retrieves from its extra argument.
-
-        */
 
         UUID shiftId = (UUID) getArguments().getSerializable(ARG_SHIFT_ID);
 
@@ -90,14 +75,14 @@ public class ShiftFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                // This line is intentionally left blank
+
             }
         });
 
-        /*
-        mEditTextTitle = (EditText) view.findViewById(R.id.shift_hours);
-        mEditTextTitle.setText(mShift.getShiftHours());
-        mEditTextTitle.addTextChangedListener(new TextWatcher() {
+/*
+        mEditTextHours = (EditText) view.findViewById(R.id.shift_hours);
+        mEditTextHours.setText(mShift.getShiftHours());
+        mEditTextHours.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // This line is intentionally left blank
@@ -105,7 +90,7 @@ public class ShiftFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mShift.setShiftHours((String.valueOf(sh)));
+                mShift.setShiftHours(mEditTextHours);
             }
 
             @Override
@@ -114,13 +99,13 @@ public class ShiftFragment extends Fragment {
             }
         });
 
-
+*/
 
 
 /*
-        mButtonDate = (EditText) view.findViewById(R.id.shift_hours);
-        mButtonDate.setText(mShift.getShiftHours());
-        mButtonDate.setEnabled(false);
+        mCalculatePay = (EditText) view.findViewById(R.id.shift_hours);
+        mCalculatePay.setText(mShift.getShiftHours());
+        mCalculatePay.setEnabled(false);
 */
 
 /*

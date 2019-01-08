@@ -20,6 +20,8 @@
             android:name=".ShiftPagerActivity"
             android:parentActivityName=".ShiftListActivity">
         </activity>
+        <activity android:name=".ShiftActivity">
+        </activity>
     </application>
 
 </manifest>
