@@ -84,23 +84,21 @@ public class ShiftFragment extends Fragment {
         mEditTextHours.setText(mShift.getShiftHours());
         mEditTextHours.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            public void beforeTextChanged(CharSequence a, int start, int count, int after) {
                 // This line is intentionally left blank
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mShift.setShiftHours(mEditTextHours);
+            public void onTextChanged(CharSequence a, int start, int before, int count) {
+                mShift.setShiftHours(a.toString());
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
+            public void afterTextChanged(Editable a) {
                 // This line is intentionally left blank
             }
         });
-
 */
-
 
 /*
         mCalculatePay = (EditText) view.findViewById(R.id.shift_hours);
