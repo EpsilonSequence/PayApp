@@ -21,9 +21,9 @@ public class ShiftPagerActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private List<Shift> mShifts;
 
-    public static Intent newIntent(Context packageContext, UUID todoId){
+    public static Intent newIntent(Context packageContext, UUID shiftId){
         Intent intent = new Intent(packageContext, ShiftPagerActivity.class);
-        intent.putExtra(EXTRA_SHIFT_ID, todoId);
+        intent.putExtra(EXTRA_SHIFT_ID, shiftId);
         return intent;
     }
 

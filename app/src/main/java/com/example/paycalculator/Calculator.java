@@ -5,13 +5,24 @@ import android.view.View;
 import java.util.UUID;
 
 public class Calculator {
-    private UUID mId;
+    private UUID calcId;
     private String shiftTitle;
     private int shiftHours;
     private int totalHours;
     private double hourlyWage;
     private double totalPay;
 
+    public Calculator() {
+        calcId = UUID.randomUUID();
+    }
+
+    public UUID getcalcId() {
+        return calcId;
+    }
+
+    public void setcalcId(UUID calcId) {
+        this.calcId = calcId;
+    }
 
     public String getShiftTitle() {
         return shiftTitle;
@@ -37,8 +48,19 @@ public class Calculator {
         this.totalHours = totalHours;
     }
 
-    public void saveHours (View v)
-    {
-        totalHours = (totalHours + shiftHours);
+    public double getHourlyWage() {
+        return hourlyWage;
+    }
+
+    public void setHourlyWage(double hourlyWage) {
+        this.hourlyWage = hourlyWage;
+    }
+
+    public double getTotalPay() {
+        return totalPay;
+    }
+
+    public void setTotalPay(double totalPay) {
+        this.totalPay = totalPay;
     }
 }

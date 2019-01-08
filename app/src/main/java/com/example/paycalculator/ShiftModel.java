@@ -26,7 +26,7 @@ public class ShiftModel {
         for (int i=0; i < 3; i++){
             Shift shift = new Shift();
             shift.setShiftTitle("Shift title " + i);
-            shift.setShiftHours(1);
+            shift.setShiftHours(0);
 
             shiftList.add(shift);
         }
@@ -55,5 +55,11 @@ public class ShiftModel {
         shiftList.add(shift);
 
     }
+/*
+    public void addCalculator(Calculator calculator){
 
+        shiftList.add(calculator);
+
+    }
+*/
 }

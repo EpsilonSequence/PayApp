@@ -19,7 +19,7 @@ import java.util.List;
 
 public class ShiftListFragment extends Fragment {
 
-    private RecyclerView mTodoRecyclerView;
+    private RecyclerView mShiftRecyclerView;
     ShiftAdapter mShiftAdapter;
 
     @Override
@@ -37,8 +37,8 @@ public class ShiftListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_shift_list, container, false);
 
-        mTodoRecyclerView = (RecyclerView) view.findViewById(R.id.shift_recycler_view);
-        mTodoRecyclerView.setLayoutManager( new LinearLayoutManager(getActivity()) );
+        mShiftRecyclerView = (RecyclerView) view.findViewById(R.id.shift_recycler_view);
+        mShiftRecyclerView.setLayoutManager( new LinearLayoutManager(getActivity()) );
 
         updateUI();
 
@@ -70,17 +70,17 @@ public class ShiftListFragment extends Fragment {
                 startActivity(intent);
 
                 return true;
-/*
+
             case R.id.calculate_pay:
 
                 Calculator calculator = new Calculator();
                 ShiftModel.get(getActivity()).addCalculator(calculator);
 
-                Intent intent = ShiftPagerActivity.newIntent(getActivity(), calculator.getTotalHours());
+                intent = ShiftPagerActivity.newIntent(getActivity(), calculator.getcalcId());
                 startActivity(intent);
 
                 return true;
-*/
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -94,7 +94,7 @@ public class ShiftListFragment extends Fragment {
 
         if (mShiftAdapter == null) {
             mShiftAdapter = new ShiftAdapter(shifts);
-            mTodoRecyclerView.setAdapter(mShiftAdapter);
+            mShiftRecyclerView.setAdapter(mShiftAdapter);
         } else {
             mShiftAdapter.notifyDataSetChanged();
         }
