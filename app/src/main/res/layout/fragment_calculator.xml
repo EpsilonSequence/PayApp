@@ -16,7 +16,8 @@
         android:id="@+id/hourly_wage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hourly_wage_hint"/>
+        android:hint="@string/hourly_wage_hint"
+        android:inputType="number|numberDecimal" />
 
     <TextView
         style="?android:listSeparatorTextViewStyle"
@@ -31,10 +32,10 @@
         android:hint="@string/total_hours_hint"/>
 
     <Button
-        android:id="@+id/save_hours"
+        android:id="@+id/calculate_pay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Hours" />
+        android:text="@string/calculate_pay" />
 
     <EditText
         android:id="@+id/total_pay"

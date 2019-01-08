@@ -48,7 +48,7 @@ public class ShiftFragment extends Fragment {
          allows for simple code that works.
 
         UUID shiftId = (UUID) getActivity()
-                .getIntent().getSerializableExtra(TodoActivity.EXTRA_TODO_ID);
+                .getIntent().getSerializableExtra(TodoActivity.EXTRA_SHIFT_ID);
 
          The disadvantage: ShiftFragment is no longer reusable as it is coupled to Activities whoes
          intent has to contain the shiftId.

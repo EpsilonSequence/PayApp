@@ -70,6 +70,7 @@ public class ShiftListFragment extends Fragment {
                 startActivity(intent);
 
                 return true;
+/*
             case R.id.calculate_pay:
 
                 Calculator calculator = new Calculator();
@@ -79,7 +80,7 @@ public class ShiftListFragment extends Fragment {
                 startActivity(intent);
 
                 return true;
-
+*/
             default:
                 return super.onOptionsItemSelected(item);
         }

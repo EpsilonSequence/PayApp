@@ -16,14 +16,14 @@ import java.util.UUID;
 public class ShiftPagerActivity extends AppCompatActivity {
 
 
-    private static final String EXTRA_TODO_ID = "todo_id";
+    private static final String EXTRA_SHIFT_ID = "shift_id";
 
     private ViewPager mViewPager;
     private List<Shift> mShifts;
 
     public static Intent newIntent(Context packageContext, UUID todoId){
         Intent intent = new Intent(packageContext, ShiftPagerActivity.class);
-        intent.putExtra(EXTRA_TODO_ID, todoId);
+        intent.putExtra(EXTRA_SHIFT_ID, todoId);
         return intent;
     }
 
@@ -32,7 +32,7 @@ public class ShiftPagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shift_pager);
 
-        UUID todoId = (UUID) getIntent().getSerializableExtra(EXTRA_TODO_ID);
+        UUID shiftmId = (UUID) getIntent().getSerializableExtra(EXTRA_SHIFT_ID);
 
         mViewPager = findViewById(R.id.shift_view_pager);
 
@@ -53,7 +53,7 @@ public class ShiftPagerActivity extends AppCompatActivity {
         });
 
         for (int i = 0; i < mShifts.size(); i++){
-            if (mShifts.get(i).getmId().equals(todoId)) {
+            if (mShifts.get(i).getmId().equals(shiftmId)) {
                 mViewPager.setCurrentItem(i);
                 break;
             }

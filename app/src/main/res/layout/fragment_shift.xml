@@ -28,7 +28,8 @@
         android:id="@+id/shift_hours"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/shift_hours_hint"/>
+        android:hint="@string/shift_hours_hint"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/save_hours"
