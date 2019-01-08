@@ -7,4 +7,11 @@
     <string name="shift_hours_label">Hours Worked</string>
     <string name="shift_hours_hint">Number of hours worked</string>
     <string name="new_shift">New Shift</string>
+    <string name="calculate_pay">Calculate Pay</string>
+    <string name="hourly_wage">7.10</string>
+    <string name="hourly_wage_hint">7.10</string>
+    <string name="hourly_wage_label">Pay Per Hour</string>
+    <string name="total_hours">Total Hours</string>
+    <string name="total_hours_label">Total Hours</string>
+    <string name="Total_pay">New Shift</string>
 </resources>
