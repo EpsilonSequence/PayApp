@@ -26,6 +26,7 @@ public class ShiftListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
     }
 
@@ -51,6 +52,29 @@ public class ShiftListFragment extends Fragment {
         updateUI();
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_shift_list, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.new_shift:
+
+                Shift shift = new Shift();
+                ShiftModel.get(getActivity()).addShift(shift);
+
+                Intent intent = ShiftPagerActivity.newIntent(getActivity(), shift.getmId());
+                startActivity(intent);
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     private void updateUI(){
 
@@ -102,7 +126,7 @@ public class ShiftListFragment extends Fragment {
         public void bind(Shift shift){
             mShift = shift;
             mTextViewTitle.setText(mShift.getShiftTitle());
-           // mTextViewHours.setText(mShift.getShiftHours());
+            //mTextViewHours.setText(mShift.getShiftHours());
         }
 
     }
