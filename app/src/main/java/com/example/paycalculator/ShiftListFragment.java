@@ -74,7 +74,7 @@ public class ShiftListFragment extends Fragment {
             case R.id.calculate_pay:
 
                 Calculator calculator = new Calculator();
-                ShiftModel.get(getActivity()).addShift(calculator);
+                ShiftModel.get(getActivity()).addCalculator(calculator);
 
                 Intent intent = ShiftPagerActivity.newIntent(getActivity(), calculator.getTotalHours());
                 startActivity(intent);
